@@ -13,7 +13,7 @@ def format_duration(duration):
     hours = total_seconds // SECONDS_IN_HOUR
     minutes = (total_seconds % SECONDS_IN_HOUR) // SECONDS_IN_MINUTE
     seconds = total_seconds % SECONDS_IN_MINUTE
-    return f"{hours:02}:{minutes:02}:{seconds:02}"
+    return f'{hours:02}:{minutes:02}:{seconds:02}'
 
 
 def is_visit_strange(duration, threshold=STRANGE_VISIT_THRESHOLD_SECONDS):
@@ -28,9 +28,9 @@ def get_duration(entered_at):
 
 def storage_information_view(request):
     non_closed_visits = []
-    not_leaved = Visit.objects.filter(leaved_at__isnull=True)
+    ongoing_visits = Visit.objects.filter(leaved_at__isnull=True)
 
-    for visit in not_leaved:
+    for visit in ongoing_visits:
         passcard_owner = visit.passcard.owner_name
         entered_at_local = localtime(visit.entered_at)
         duration = get_duration(visit.entered_at)
