@@ -8,17 +8,17 @@
 
 Python3 должен быть уже установлен. Затем используйте 'pip' (или 'pip3', есть конфликт с Python2) для установки зависимостей:
 
-'pip install -r requirements.txt'
+`pip install -r requirements.txt`
 
 Также необходимо создать файл .env и добавить туда следующие значения:
 
-'''ENGINE=
+```ENGINE=
 HOST=
 PORT=
 NAME=
 DB_USER=
 PASSWORD=
-SECRET_KEY='''
+SECRET_KEY=```
 ## Цель проекта
 
 Код написан в образовательных целях на онлайн-курсе для веб-разработчиков dvmn.org.
