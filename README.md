@@ -12,14 +12,16 @@ Python3 должен быть уже установлен. Затем испол
 
 Также необходимо создать файл .env и добавить туда следующие значения:
 
-```ENGINE=
-HOST=
-PORT=
-NAME=
-DB_USER=
-PASSWORD=
-SECRET_KEY=
+```DB_ENGINE=django.db.backends.postgresql
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=your_database_name
+DB_USER=your_database_user
+DB_PASSWORD=your_database_password
+SECRET_KEY=your_secret_key
+ALLOWED_HOSTS=127.0.0.1,localhost
 ```
+Замените `your_database_name`, `your_database_user`, `your_database_password`, `your_secret_key`, `127.0.0.1,localhost`, `5432`, `django.db.backends.postgresql` на ваши данные.
 
 ## Как запустить
 
