@@ -3,14 +3,15 @@ from environs import Env
 
 env = Env()
 env.read_env()
+
 DATABASES = {
     'default': {
-        'ENGINE': env.str('ENGINE'),
-        'HOST': env.str('HOST'),
-        'PORT': env.str('PORT'),
-        'NAME': env.str('NAME'),
+        'ENGINE': env.str('DB_ENGINE'),
+        'HOST': env.str('DB_HOST'),
+        'PORT': env.str('DB_PORT'),
+        'NAME': env.str('DB_NAME'),
         'USER': env.str('DB_USER'),
-        'PASSWORD': env.str('PASSWORD'),
+        'PASSWORD': env.str('DB_PASSWORD'),
     }
 }
 
@@ -22,8 +23,7 @@ DEBUG = env.bool('DEBUG', default=False)
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost'])
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = [
